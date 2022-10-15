@@ -59,6 +59,7 @@ Match
 **On deck**
 
 - Update schema and write logic to check the order of user ids in "liked"/dibs array.
+   - build match view and queued dibs view (in post view) for user who is the owner.
 - Prevent user from calling dibs on their own items.
 - clean up inaccurate img alts and naming of backend controllers/routes/things without wrecking the database.
 - Rewrite the ejs templates to fit purpose.
