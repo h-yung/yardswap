@@ -61,5 +61,5 @@ app.use("/comment", commentRoutes);
 
 //Server Running
 app.listen(process.env.PORT, () => {
-  console.log("Server is running, you better catch it!");
+  console.log("Yard swap happening on 5000th St.");
 });
