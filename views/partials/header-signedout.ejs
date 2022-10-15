@@ -23,18 +23,15 @@
       integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
       crossorigin="anonymous"
     />
+    <%# below, the actual fontAwesome kit being used %>
+    <script src="https://kit.fontawesome.com/9346d5df99.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
     <header class="container">
       <div class="text-center">
         <h1 class=""><a href="/profile">Yard Swap</a></h1>
-        
-        <% if (user !== undefined){ %>
-        <h2>Welcome, <%= user?.userName %>!</h2>
-        <span>Give away or swap those #stillgood items</span>
-
-        <% } %>
+        <span>Join to get access to free great finds and help your things find a second home.</span>
       </div>
     </header>
   </body>
