@@ -4,12 +4,14 @@
       <div class="col-6">
           <div>
               <p><strong>User Name</strong>: <%= user.userName %></p>
-              <%# <p><strong>Email</strong>: <%= user.email %></p> %>
+              <p><strong>Email</strong>: <%= user.email %></p> 
+              <p>Maybe should hide email of others until matched?</p>
               <p>Member since <%= user.createdAt.toISOString().split('T')[0] %>.</p>
 
           </div>
       </div>
       <div class="col-6">
+        <h3><%= user.userName%>'s items</h3>
         <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">

@@ -1,24 +1,45 @@
-
 /* some patching before transition away from bootstrap */
+
+:root {
+  --color-primary: #2d3153;
+  --color-secondary: #7b3153;
+  --color-tertiary: #fcbf3e;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+}
+
+/* add media mode prefs */
+
+/** global header **/
+.global__title {
+  font-weight: bold;
+  font-size: 1.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+}
 
 /**visual diff **/
 .emph {
-    font-weight:bold;
+  font-weight: bold;
 }
-
 
 /**Layout**/
 .icon {
-    width: 2rem;
-    height: 2rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 .Post__container {
-    border: 1px solid lightgray;
+  border: 1px solid lightgray;
+  padding: 6rem;
 }
 
 .container__flag {
-    border: 1px solid red;
-    display: flex;
-
+  display: flex;
 }

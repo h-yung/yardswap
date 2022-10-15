@@ -9,7 +9,12 @@ module.exports = {
   getProfile: async (req, res) => {
     try {
       const posts = await Post.find({ user: req.user.id });
-      res.render("profile.ejs", { posts: posts, user: req.user });
+      const dibbed = await Post.find({ usersWhoLiked: req.user.id });
+      res.render("profile.ejs", {
+        posts: posts,
+        user: req.user,
+        dibbed: dibbed,
+      });
     } catch (err) {
       console.log(err);
     }
@@ -112,6 +117,12 @@ module.exports = {
   },
   likePostFromFeed: async (req, res) => {
     //essentially the same as likePost but redirects back to feed
+
+    //prevent item owner from dib on own item
+    if (req.params.userid === req.user.id) {
+      res.redirect(`/feed`);
+    }
+
     try {
       //check if userid is in the array for that post, = already liked it
       let chosenPost = await Post.findOne({
@@ -143,6 +154,12 @@ module.exports = {
     }
   },
   likePost: async (req, res) => {
+    //prevent item owner from dib on own item - not yet working
+    const isOwnItem = req.params.userid === req.user.id;
+    if (isOwnItem) {
+      res.render(`/post/${req.params.id}`, { isOwnItem });
+    }
+
     try {
       //check if userid is in the array for that post, = already liked it
       let chosenPost = await Post.findOne({

@@ -3,7 +3,7 @@
   <div class="row mt-5 container__flag">
     <div class="col-6 Post__container">
       <h2><%= post.title %></h2>
-      <span class="col">By: <a href="/<%= author._id%>/profile"><%= author.userName %></a></span>
+      <span class="col">Owner: <a href="/<%= author._id%>/profile"><%= author.userName %></a></span>
       <img class="img-fluid" src="<%= post.image%>" />
       <div class="row align-items-center">
         <form
@@ -19,15 +19,15 @@
               >
               <% if (likedByViewer){ %>
                 <% if (post.likes > 1){ %>
-                  <span>You and <%=post.likes - 1 %> liked this</span>
+                  <span>You and <%=post.likes - 1 %> called dibs</span>
                 <% }else{ %>
-                  <span>You liked this</span>
+                  <span>You called dibs</span>
                 <% } %>
               <% } else { %>
                 <% if (post.likes === 0){ %>
-                  <span><%=post.likes%></span>
+                  <span><%=post.likes%> called dibs</span>
                 <% } else { %>
-                  <span><%=post.likes%> liked this</span>
+                  <span><%=post.likes%> called dibs ahead of you</span>
                 <% } %>
               <% } %>
           </button>
@@ -46,7 +46,7 @@
         <p><%= post.caption %></p>
       </div>
     </div>
-    <div class="col mt-2">
+    <div class="col mt-2 py-4 ps-4">
       <ul class="list-unstyled">
         <% for(var i=0; i<comments.length; i++) {%>
           <li class="row align-items-center mt-4" id="<%=comments[i]._id %>">

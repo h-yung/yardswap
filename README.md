@@ -47,8 +47,15 @@ Match
 - profile should show their list of items (all)
 - if user logged in, profile shows the dibbed item list (can be made public if user wants). Instead of "favorite/bookmark for later" list.
 
+**Done**
+
+- Updated some styling and terms
+
 **On deck**
 
+- Update schema and write logic to check the order of user ids in "liked"/dibs array.
+- Prevent user from calling dibs on their own items.
+- clean up inaccurate img alts and naming of backend controllers/routes/things without wrecking the database.
 - Rewrite the ejs templates to fit purpose.
 - Make it possible to sort items in feed in some way beyond the default (recency, in descending order).
 - Make it possible for commenter to delete their own comments.

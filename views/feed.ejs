@@ -23,12 +23,14 @@
                     >
                     <% if (posts[i].likedByViewer){ %>
                       <% if (posts[i].likes > 1){ %>
-                        <span>You and <%=posts[i].likes -1 %> liked this</span>
+                        <span>You and <%=posts[i].likes -1 %> called dibs</span>
                       <% }else{ %>
-                        <span>You liked this</span>
+                        <span>You called dibs</span>
                       <% } %>
-                    <% } else { %>
-                      <span><%=posts[i].likes%> liked this</span>
+                    <% } else if (posts[i].likes === 0){ %>
+                        <span><%=posts[i].likes%> called dibs</span>
+                      <% } else { %>
+                      <span><%=posts[i].likes%> called dibs ahead of you</span>
                     <% } %>
                 </button>
               </form>

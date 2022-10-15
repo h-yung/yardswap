@@ -9,8 +9,13 @@
               <a href="/logout" class="col-3 btn btn-primary">Logout</a>
           </div>
           <div class="mt-5">
+            <h2>Current matches (placeholder)</h2>
+            <ol>
+              <li>For loop to list matches, prob should have an alert popup if instant.</li>
+            </ol>
+          </div>
+          <div class="mt-5">
             <h2>List a new item</h2>
-            <p>Provide your best picture of the item and a specific description.</p>
             <form action="/post/createPost" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
                   <label for="title" class="form-label">What it is</label>
@@ -27,13 +32,33 @@
               <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
             </form>
           </div>
+          <div class="mt-5">
+            <h2>Community tips</h2>
+            <ul>
+              <li>Help the community by leaving a review about the item once a swap is completed or a gift has been received.</li>
+              <li>Try to provide the best image you can (in good lighting and resolution).</li>
+              <li>Don't call dibs on your own items. (It will discourage people who are interested in your item!)</li>
+              <li>Dibs on items are shown to the current item owner in a queue. While you're encouraged to honor the order in which dibs were placed, there's opportunity to negotiate and additional factors (like matches). You can join a queue by placing dibs on something even if someone else has called dibs ahead of you.</li>
+            </ul>
+            </div>
       </div>
       <div class="col-6">
+        <h3>Your items</h3>
         <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
             <a href="/post/<%= posts[i]._id%>">
               <img class="img-fluid" src="<%= posts[i].image%>">
+            </a>
+          </li>
+        <% } %>
+        </ul>
+        <h3>Dibs called</h3>
+        <ul class="row list-unstyled">
+        <% for(var i=0; i<dibbed.length; i++) {%>
+          <li class="col-6 justify-content-between mt-5">
+            <a href="/post/<%= dibbed[i]._id%>">
+              <img class="img-fluid" src="<%= dibbed[i].image%>">
             </a>
           </li>
         <% } %>
