@@ -20,15 +20,22 @@ module.exports = {
     }
   },
   getOtherUserProfile: async (req, res) => {
+    //go to main profile if own user
+    //*rewrite as class at some point so you can cross-ref methods, less repetition?
     if (req.params.userid === req.user.id) {
-      //go to main profile if own user
       try {
         const posts = await Post.find({ user: req.user.id });
-        res.render("profile.ejs", { posts: posts, user: req.user });
+        const dibbed = await Post.find({ usersWhoLiked: req.user.id });
+        res.render("profile.ejs", {
+          posts: posts,
+          user: req.user,
+          dibbed: dibbed,
+        });
       } catch (err) {
         console.log(err);
       }
     } else {
+      //not the profile of the user who is viewing
       try {
         const person = await User.findById(req.params.userid);
         const posts = await Post.find({ user: req.params.userid });
@@ -63,21 +70,12 @@ module.exports = {
     try {
       const post = await Post.findById(req.params.id);
       const author = await User.findById(post.user);
+      const { usersWhoLiked } = post;
       const comments = await Comment.find({ post: req.params.id }).sort({
         createdAt: "desc",
       });
       // .lean();
       //got rid of lean again bc I need the likedByViewer logic to work
-
-      // //prevent item owner from dib on own item by creating a condition for the UI
-      // let isOwnPost = false;
-      // console.log(post.user)
-      // console.log(req.user.id)
-
-      // if (post.user.toString() === req.user.id.toString()){
-      //   // console.log(`Viewer owns this item`)
-      //   isOwnPost = true;
-      // }
 
       //prob not the most efficient approach
       //essentially tacking on the username outside the db
@@ -89,6 +87,13 @@ module.exports = {
           comment.likedByViewer = true;
         }
       }
+      const userNamesWhoLiked = [];
+      for (let i = 0; i < usersWhoLiked.length; i++) {
+        const user = await User.findById(usersWhoLiked[i]);
+        userNamesWhoLiked.push(user.userName);
+      }
+
+      console.log(userNamesWhoLiked);
 
       //if req.user has liked this post, return a mark
       const likedByViewer = post.usersWhoLiked.includes(req.user.id);
@@ -100,6 +105,8 @@ module.exports = {
         user: req.user,
         likedByViewer,
         comments: comments,
+        idsWhoLiked: usersWhoLiked, //still need in order to hyperlink; synced to userNames array
+        usersWhoLiked: userNamesWhoLiked,
       });
     } catch (err) {
       console.log(err);

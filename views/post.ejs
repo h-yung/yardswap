@@ -54,6 +54,23 @@
       </div>
     </div>
     <div class="col mt-2 py-4 ps-4">
+      <%if(post.user == user.id){ %>
+        <h3>Current Dibs</h3>
+        <% if (usersWhoLiked.length === 0){ %>
+          <span>None</span>
+        <%} else {%>
+        <ol>
+          <% for(var i=0; i<usersWhoLiked.length; i++) {%>
+            <li class="">
+              <a href="/<%= idsWhoLiked[i]%>/profile">
+                <span><%= usersWhoLiked[i] %></span>
+                <span class="emph"> - is a match!</span>
+              </a>
+            </li>
+          <% } %>
+        </ol>
+        <% } %>
+      <% } %>
       <ul class="list-unstyled">
         <% for(var i=0; i<comments.length; i++) {%>
           <li class="row align-items-center mt-4" id="<%=comments[i]._id %>">
