@@ -2,7 +2,7 @@
 
 In a "marketplace" based on trust and zero dollars, authorized users can list their items, provide a single image and brief description, and let other users call dibs on the item.
 
-- Users can "match" if they each have placed dibs on at least one item in each other's grouping.
+- Users can "match" if they each have placed dibs on at least one item in each other's listings.
 - Users can remove their dib and add it back on an item (but will be pushed to end of the queue immediately following those actions).
 - Users can also choose to gift their item to those who have placed a dib.
 - At their own discretion, users can communicate via the comments/messaging area for individual item listings and also move on to email comms.
