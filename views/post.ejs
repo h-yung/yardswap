@@ -4,18 +4,15 @@
     <div class="col-6 Post__container">
       <h2><%= post.title %></h2>
       <span class="col">Owner: <a href="/<%= author._id%>/profile"><%= author.userName %></a></span>
-      <img class="img-fluid" src="<%= post.image%>" />
-
-
-    
       <div class="row align-items-center">
+        <%if(post.user != user.id){ %>
         <form
           class="col"
           action="/post/likePost/<%= post.id %>?_method=PUT"
           method="POST"
         >
           <button 
-            class="btn" 
+            class="btn mb-4" 
             type="submit"
             <%= post.user == user.id ? 'disabled' : '' %>
           >
@@ -39,16 +36,19 @@
               <% } %>
           </button>
         </form>
+        <% } %>
         <%if(post.user == user.id){ %>
           <form
             action="/post/deletePost/<%= post.id %>?_method=DELETE"
             method="POST"
-            class="col-3"
+            class="col-3 mb-4"
           >
             <button class="btn btn-primary fa fa-trash" type="submit"></button>
           </form>
           <%}%>
       </div>
+      <img class="img-fluid" src="<%= post.image%>" />
+
       <div class="d-flex">
         <p><%= post.caption %></p>
       </div>
