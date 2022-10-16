@@ -17,7 +17,7 @@ Repurposes the 100Devs binary-upload-boom social app.
 - Node, Express, MongoDB and Mongoose.
 - Bootstrap for styling. Also not ideal and may replace.
 - Cloudinary and multer for media handling and storage. 
-- passport and a few other middlewares for authentication, sessions, etc. 
+- passport and other middleware for authentication, sessions, etc. 
 
 ## Previews
 ### **View own profile**
