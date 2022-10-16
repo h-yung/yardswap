@@ -9,16 +9,6 @@
               <a href="/logout" class="col-3 btn btn-primary">Logout</a>
           </div>
           <div class="mt-5">
-            <h2>Check for matches!</h2>
-            <span>This icon will appear on your item listings if there's a match.</span>
-              <img 
-                class="icon__larger" 
-                src='/imgs/matched.png'
-                alt="matched icon"
-              >
-            </h2>
-          </div>
-          <div class="mt-5">
             <h2>List a new item</h2>
             <form action="/post/createPost" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
@@ -49,6 +39,16 @@
       </div>
       <div class="col-6">
         <h3>Your items</h3>
+        <div class="mt-5">
+          <span class="emph">Check for matches!</span>
+          <span>This icon will appear on your item page if there's a match.</span>
+            <img 
+              class="icon__larger" 
+              src='/imgs/matched.png'
+              alt="matched icon"
+            >
+          </h2>
+        </div>
         <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
