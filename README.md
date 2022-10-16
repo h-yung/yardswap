@@ -23,15 +23,17 @@ Repurposes the 100Devs binary-upload-boom social app.
 ### **View own profile**
 
 ![yard_swap_v2](https://user-images.githubusercontent.com/102257735/196018949-e081609c-3895-44d4-83b4-d7b0e11c067e.png)
+
 --- 
 ### **Item page**
 
-![yard_swap_v1-post](https://user-images.githubusercontent.com/102257735/195973060-4ffa858d-9089-43af-8c24-10f06d7119ba.png)
+![yard_swap_v2-post](https://user-images.githubusercontent.com/102257735/196019825-6996b867-5666-457e-bb17-83c44f03e466.png)
+
 ---
 ### **Item page (viewed by owner)**
-Matches are flagged, though maybe too subtly.
+Matches are flagged, though maybe too subtly. Owner can't call dibs but can delete item listing.
 
-![yard_swap_v2_ownItemPage](https://user-images.githubusercontent.com/102257735/196018941-0c2c1010-0cef-4578-9208-f8bb8747a55f.png)
+![yard_swap_v2_ownItemPage](https://user-images.githubusercontent.com/102257735/196019839-159976d5-4268-4781-b24f-672d94961d16.png)
 
 ---
 
