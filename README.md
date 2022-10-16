@@ -7,6 +7,8 @@ In a "marketplace" based on trust and zero dollars, authorized users can list th
 - Users can also choose to gift their item to those who have placed a dib.
 - At their own discretion, users can communicate via the comments/messaging area for individual item listings and also move on to email comms.
 
+[More documentation here (Setup, Issues, questions to resolve)](https://github.com/h-yung/yardswap/blob/main/shared-notes.md).
+
 Includes user authentication, post/comment attribution, placing dibs (joining a queue), etc.
 Repurposes the 100Devs binary-upload-boom social app.
 
