@@ -5,13 +5,20 @@
       <h2><%= post.title %></h2>
       <span class="col">Owner: <a href="/<%= author._id%>/profile"><%= author.userName %></a></span>
       <img class="img-fluid" src="<%= post.image%>" />
+
+
+    
       <div class="row align-items-center">
         <form
           class="col"
           action="/post/likePost/<%= post.id %>?_method=PUT"
           method="POST"
         >
-          <button class="btn" type="submit">
+          <button 
+            class="btn" 
+            type="submit"
+            <%= post.user == user.id ? 'disabled' : '' %>
+          >
               <img 
                 class="icon" 
                 src='<%= likedByViewer ? "/imgs/liked.png" : "/imgs/notLiked.png" %>'

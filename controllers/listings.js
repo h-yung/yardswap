@@ -69,6 +69,16 @@ module.exports = {
       // .lean();
       //got rid of lean again bc I need the likedByViewer logic to work
 
+      // //prevent item owner from dib on own item by creating a condition for the UI
+      // let isOwnPost = false;
+      // console.log(post.user)
+      // console.log(req.user.id)
+
+      // if (post.user.toString() === req.user.id.toString()){
+      //   // console.log(`Viewer owns this item`)
+      //   isOwnPost = true;
+      // }
+
       //prob not the most efficient approach
       //essentially tacking on the username outside the db
       //including likes
@@ -117,18 +127,13 @@ module.exports = {
   },
   likePostFromFeed: async (req, res) => {
     //essentially the same as likePost but redirects back to feed
-
-    //prevent item owner from dib on own item
-    if (req.params.userid === req.user.id) {
-      res.redirect(`/feed`);
-    }
-
     try {
       //check if userid is in the array for that post, = already liked it
       let chosenPost = await Post.findOne({
         _id: req.params.id,
         usersWhoLiked: req.user.id,
       });
+
       if (chosenPost) {
         await Post.findOneAndUpdate(
           { _id: req.params.id },
@@ -154,12 +159,6 @@ module.exports = {
     }
   },
   likePost: async (req, res) => {
-    //prevent item owner from dib on own item - not yet working
-    const isOwnItem = req.params.userid === req.user.id;
-    if (isOwnItem) {
-      res.render(`/post/${req.params.id}`, { isOwnItem });
-    }
-
     try {
       //check if userid is in the array for that post, = already liked it
       let chosenPost = await Post.findOne({
