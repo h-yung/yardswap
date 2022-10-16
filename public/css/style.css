@@ -35,6 +35,11 @@ body {
   height: 2rem;
 }
 
+.icon__larger {
+  width: 3rem;
+  height: 3rem;
+}
+
 .Post__container {
   border: 1px solid lightgray;
   padding: 6rem;
