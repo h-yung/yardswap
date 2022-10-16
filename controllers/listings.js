@@ -10,6 +10,17 @@ module.exports = {
     try {
       const posts = await Post.find({ user: req.user.id });
       const dibbed = await Post.find({ usersWhoLiked: req.user.id });
+
+      //check for MATCHES. This assumes the viewer of the current profile page is the owner
+      //extract this logic at some pt because getting duplicated
+      /**
+       * First loop through user's dibbed item list and get the item owner ids.
+       * Looping through the owner ids of items the user wants,
+       *  check the user's own item list (posts) for any items where those owner ids can be found.
+       * If any are found, get the usernames of those user ids
+       * pass as an array var for rendering the profile page. Also remark "Matches pending!"
+       */
+
       res.render("profile.ejs", {
         posts: posts,
         user: req.user,
@@ -90,10 +101,15 @@ module.exports = {
       const userNamesWhoLiked = [];
       for (let i = 0; i < usersWhoLiked.length; i++) {
         const user = await User.findById(usersWhoLiked[i]);
-        userNamesWhoLiked.push(user.userName);
+        //check for MATCHES. This assumes the viewer of the current item page is the item owner
+        //extract this logic at some pt because getting duplicated for profile view
+        const itemsViewerDibbed = await Post.find({
+          user: usersWhoLiked[i],
+          usersWhoLiked: req.user,
+        });
+        const isMatch = itemsViewerDibbed.length !== 0;
+        userNamesWhoLiked.push({ name: user.userName, isMatch });
       }
-
-      console.log(userNamesWhoLiked);
 
       //if req.user has liked this post, return a mark
       const likedByViewer = post.usersWhoLiked.includes(req.user.id);
@@ -105,8 +121,8 @@ module.exports = {
         user: req.user,
         likedByViewer,
         comments: comments,
-        idsWhoLiked: usersWhoLiked, //still need in order to hyperlink; synced to userNames array
-        usersWhoLiked: userNamesWhoLiked,
+        idsWhoDibbed: usersWhoLiked, //still need in order to hyperlink; synced to userNames array
+        usersWhoDibbed: userNamesWhoLiked,
       });
     } catch (err) {
       console.log(err);

@@ -22,7 +22,7 @@
               <img 
                 class="icon" 
                 src='<%= likedByViewer ? "/imgs/liked.png" : "/imgs/notLiked.png" %>'
-                alt="not filled heart"
+                alt="dib status hand icon"
               >
               <% if (likedByViewer){ %>
                 <% if (post.likes > 1){ %>
@@ -56,16 +56,22 @@
     <div class="col mt-2 py-4 ps-4">
       <%if(post.user == user.id){ %>
         <h3>Current Dibs</h3>
-        <% if (usersWhoLiked.length === 0){ %>
+        <% if (usersWhoDibbed.length === 0){ %>
           <span>None</span>
         <%} else {%>
         <ol>
-          <% for(var i=0; i<usersWhoLiked.length; i++) {%>
+          <% for(var i=0; i<usersWhoDibbed.length; i++) {%>
             <li class="">
-              <a href="/<%= idsWhoLiked[i]%>/profile">
-                <span><%= usersWhoLiked[i] %></span>
-                <span class="emph"> - is a match!</span>
+              <a href="/<%= idsWhoDibbed[i]%>/profile">
+                <span><%= usersWhoDibbed[i].name %></span>
               </a>
+              <%if (usersWhoDibbed[i].isMatch === true ){ %>
+                <img 
+                  class="icon" 
+                  src='/imgs/matched.png'
+                  alt="matched icon"
+                >
+              <% } %>
             </li>
           <% } %>
         </ol>
@@ -88,7 +94,7 @@
                     <img 
                       class="icon" 
                       src='<%= comments[i].likedByViewer ? "/imgs/liked.png" : "/imgs/notLiked.png" %>'
-                      alt="not filled heart"
+                      alt="dib status hand icon"
                     >
                       <% if (comments[i].likes > 1 || comments[i].likes && !comments[i].likedByViewer){ %>
                         <span><%=comments[i].likes%></span>
