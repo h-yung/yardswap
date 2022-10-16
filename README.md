@@ -12,9 +12,8 @@ Assumptions:
 - not for large commercial users: By design and to limit complexity, it's going to be hard for users to filter items by tags or categories (this functionality is not planned).
 - Types of items can range from yard-saley type things - blankets, tchotkes, the odd furniture and dishware, bins, etc., minor crafts, to potentially keyboards, books, etc. that the owner is willing to swap and to an extent, gift to others to reuse.
 
+Includes user authentication, post/comment attribution, placing dibs (joining a queue), etc.
 Repurposes the 100Devs binary-upload-boom social app.
-
-Includes user authentication, post/comment attribution, unique dibs (repurposing "likes"), etc.
 
 **Tech used**:
 EJS (not ideal, but bypasses a lot of CORS pain esp with the image POST reqs)
@@ -60,6 +59,7 @@ Match
 **On deck**
 
 - Update schema and write logic to check the order of user ids in "liked"/dibs array.
+   - build match view and queued dibs view (in post view) for user who is the owner.
 - Prevent user from calling dibs on their own items.
 - clean up inaccurate img alts and naming of backend controllers/routes/things without wrecking the database.
 - Rewrite the ejs templates to fit purpose.
