@@ -51,7 +51,7 @@ How to encourage item review of item description accuracy? This is currently une
 - [x] Prevent user from calling dibs on their own items.
 - [ ] Rewrite the backend terminology to fit purpose.
 - [ ] Update database terminology to fit purpose.
-- [ ] Create archival functionality and update UI to allow filtering for available/unavailable items.
+- [ ] Create archival functionality and update UI to allow filtering for available/unavailable items. Potentially add a "complete by" (and make "created at" visible) date so that people can know around when the item will be handed off?
   - update item schema to include this key
   - update UI for PUT req by item owner
   - update matches logic to account for archival status

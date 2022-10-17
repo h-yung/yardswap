@@ -2,7 +2,7 @@
 
 In a "marketplace" based on trust and zero dollars, authorized users can list their items, provide a single image and brief description, and let other users call dibs on the item.
 
-- Users can "match" if they each have placed dibs on at least one item in each other's grouping.
+- Users can "match" if they each have placed dibs on at least one item in each other's listings.
 - Users can remove their dib and add it back on an item (but will be pushed to end of the queue immediately following those actions).
 - Users can also choose to gift their item to those who have placed a dib.
 - At their own discretion, users can communicate via the comments/messaging area for individual item listings and also move on to email comms.
@@ -17,7 +17,7 @@ Repurposes the 100Devs binary-upload-boom social app.
 - Node, Express, MongoDB and Mongoose.
 - Bootstrap for styling. Also not ideal and may replace.
 - Cloudinary and multer for media handling and storage. 
-- passport and a few other middlewares for authentication, sessions, etc. 
+- passport and other middleware for authentication, sessions, etc. 
 
 ## Previews
 ### **View own profile**
