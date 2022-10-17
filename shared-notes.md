@@ -59,7 +59,7 @@ How to encourage item review of item description accuracy? This is currently une
 - [ ] Make it possible for commenter to delete their own comments.
 - [ ] Make it visually acceptable and mobile responsive. Possibly let people swipe... on items!
 - [ ] Optimize: extract repetitive logic, write tests, and fix some ongoing bugs (e.g., strange focus area when navigating by tab).
-  - update using Mongoose's populate() method (~Mongo's $lookup). See [this example](https://stackoverflow.com/questions/63687935/node-mongoose-populate-array-of-ref-objects) for how you need to generate new object id, not directly slot in req.params.id.
+  - update using Mongoose's populate() method (~Mongo's $lookup). See [this example](https://stackoverflow.com/questions/63687935/node-mongoose-populate-array-of-ref-objects) for how you need to generate new object id, not directly slot in req.params.id. Interesting [comparison and relative age of Mongoose's populate vs. Mongo's $lookup with $aggregate](https://stackoverflow.com/questions/55575806/mongoose-populate-vs-aggregate).
 - [ ] Make it possible to have various tiers of access based on sub-groupings that users can opt into.
   - Option 1: If U1 and U2 are friends, and U2 and U3 are friends, U2 can see U1 and U3 items, and U2's items can be seen by both U1 and U3. But U1 and U3 cannot see each other's items.
   - Option 2: Alternately/on a smaller scale, everyone sees everyone's items, but U1 cannot call dibs on U3's items nor can U3 call dibs on U1's items. They can still add each other's items to a favorites list.
