@@ -29,7 +29,7 @@ When users have completed a swap and a relevant item is taken off the market:
 
 Should the app enforce a "first dib always gets the item" or gently recommend it and just leave the item owner to decide based on the users who have called dibs?
 
-- Currently, the item owner decides. Plus, there could be a late dib-placer who also matches (has an item that the owner of _this_ item called dibs on). This is easy to "game" so again - built on trust.
+- Currently, the item owner decides. Plus, there could be a late dib-placer who also matches (has an item that the owner of _this_ item called dibs on).
 
 How to encourage item review of item description accuracy? This is currently unenforceable on an app level unless there is a condition that prevents a second dib being placed if there is a completed item swap/gift but no comment from the user.
 
