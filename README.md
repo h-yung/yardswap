@@ -14,7 +14,8 @@ Repurposes the 100Devs binary-upload-boom social app.
 
 **Tech used**:
 - EJS (not ideal, but bypasses a lot of CORS pain esp with the image POST reqs).
-- Node, Express, MongoDB and Mongoose.
+- Node, Express - back end.
+- MongoDB and Mongoose for database needs.
 - Bootstrap for styling. Also not ideal and may replace.
 - Cloudinary and multer for media handling and storage. 
 - passport and other middleware for authentication, sessions, etc. 
