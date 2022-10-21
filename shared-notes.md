@@ -57,7 +57,8 @@ How to encourage item review of item description accuracy? This is currently une
   - update matches logic to account for archival status
   - update UI for feed to allow filtering, and update UI of profiles for better display of separate lists
 - [ ] Make it possible for commenter to delete their own comments.
-- [ ] Make it visually acceptable and mobile responsive. Possibly let people swipe... on items!
+- [ ] Make it visually acceptable and mobile responsive. Possibly let people swipe... on items! Honestly, I should not be using EJS if I wanted drag and drop zones... it just seems very suboptimal for developer experience. For now, just aiming to redesign the visual appearance of item listings.
+    - Refer to startbootstrap.com/ templates and [code-step layout](https://code-step.com/store2-menu/).
 - [ ] Optimize: extract repetitive logic, write tests, and fix some ongoing bugs (e.g., strange focus area when navigating by tab).
   - update using Mongoose's populate() method (~Mongo's $lookup). See [this example](https://stackoverflow.com/questions/63687935/node-mongoose-populate-array-of-ref-objects) for how you need to generate new object id, not directly slot in req.params.id. Interesting [comparison and relative age of Mongoose's populate vs. Mongo's $lookup with $aggregate](https://stackoverflow.com/questions/55575806/mongoose-populate-vs-aggregate).
 - [ ] Make it possible to have various tiers of access based on sub-groupings that users can opt into.
